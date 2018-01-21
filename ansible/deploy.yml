@@ -1,0 +1,9 @@
+- hosts: server
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Copying content files to remote server
+      copy:
+        src: "../site"
+        dest: "/site"
+        mode: 0644

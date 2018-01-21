@@ -1,0 +1,22 @@
+---
+- hosts: server
+  remote_user: root
+  become: yes
+  tasks:
+    - name: upgrade all packages
+      apt:
+        upgrade: dist
+    - name: install package "tor"
+      apt:
+        name: tor
+        state: present
+    - name: create hidden service config folder
+      file:
+        path: /opt/tor
+        state: directory
+        mode: 0750
+    - name: tor configuration stuff
+      copy:
+        src: ./torConfig
+        dest: /etc/tor/torrc
+        mode: 0644

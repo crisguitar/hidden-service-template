@@ -1,0 +1,9 @@
+---
+- hosts: server
+  gather_facts: False
+  remote_user: root
+  become: yes
+
+  tasks:
+  - name: install python
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
