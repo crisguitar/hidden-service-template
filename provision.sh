@@ -11,6 +11,5 @@ ansible-playbook python.yml \
 ansible-playbook server.yml \
   -i inventory \
   --ssh-extra-args="-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
-  #--extra-vars="username=${USERNAME} docker_version=${DOCKER_VERSION}"
 
 popd > /dev/null
