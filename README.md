@@ -1,5 +1,9 @@
 # Hidden service
 
+Under construction.
+
+Use this repo to deploy a Tor hidden service on DigitalOcean.
+
 ## Requirements
 
 - DigitalOcean account
